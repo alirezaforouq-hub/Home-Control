@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'yeelight.dart';
+import 'tv_remote.dart';
 
 void main() => runApp(const HomeControlApp());
 
@@ -138,7 +139,10 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
-                child: tab == 0 ? _lampCard() : _tvPlaceholder(),
+                child: Column(children: [
+                  Visibility(visible: tab == 0, maintainState: true, child: _lampCard()),
+                  Visibility(visible: tab == 1, maintainState: true, child: const TvRemoteView()),
+                ]),
               ),
             ),
             _nav(),
@@ -283,13 +287,6 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  Widget _tvPlaceholder() => _card(const Column(children: [
-        Icon(Icons.tv, size: 48, color: mute),
-        SizedBox(height: 12),
-        Text('TV remote comes in the next step',
-            style: TextStyle(color: mute)),
-      ]));
 
   Widget _nav() => Container(
         color: panel,
