@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   shared_preferences: ^2.2.0
   google_fonts: ^6.1.0
+  android_remote_pro: ^0.0.1
 
 flutter:
   uses-material-design: true
