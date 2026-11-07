@@ -1,0 +1,16 @@
+name: home_control
+description: Control Yeelight bulb and du TV box over local Wi-Fi.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.2.0
+  google_fonts: ^6.1.0
+
+flutter:
+  uses-material-design: true
